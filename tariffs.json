@@ -1,72 +1,50 @@
 [
   {
+    "id": "zvonkovyi",
+    "name": "Это звонковый",
+    "price": 250,
+    "gb": 0.5,
+    "minutes": 50,
+    "sms": 0
+  },
+  {
     "id": "seniki",
     "name": "Сеники",
-    "monthly_fee": 250,
-    "minutes": 50,
+    "price": 250,
     "gb": 50,
-    "sms": 50,
-    "over_minute_price": 2.0,
-    "over_gb_price": 15.0,
-    "over_sms_price": 1.5,
-    "roaming_minute_price": 25.0,
-    "roaming_gb_price": 100.0,
-    "roaming_sms_price": 10.0
+    "minutes": 50,
+    "sms": 0
+  },
+  {
+    "id": "bezlimit_500",
+    "name": "Безлимит 500 Pro Max",
+    "price": 330,
+    "gb": 9999,
+    "minutes": 150,
+    "sms": 0
   },
   {
     "id": "ukmush_ai",
     "name": "Укмуш AI",
-    "monthly_fee": 350,
-    "minutes": 60,
+    "price": 350,
     "gb": 80,
-    "sms": 50,
-    "over_minute_price": 2.0,
-    "over_gb_price": 12.0,
-    "over_sms_price": 1.5,
-    "roaming_minute_price": 25.0,
-    "roaming_gb_price": 100.0,
-    "roaming_sms_price": 10.0
+    "minutes": 60,
+    "sms": 0
   },
   {
     "id": "eto_100gb",
     "name": "Это 100 GB",
-    "monthly_fee": 690,
-    "minutes": 100,
+    "price": 690,
     "gb": 100,
-    "sms": 100,
-    "over_minute_price": 1.8,
-    "over_gb_price": 10.0,
-    "over_sms_price": 1.5,
-    "roaming_minute_price": 25.0,
-    "roaming_gb_price": 100.0,
-    "roaming_sms_price": 10.0
-  },
-  {
-    "id": "maximum_1320",
-    "name": "Максимум 1320",
-    "monthly_fee": 1320,
     "minutes": 100,
-    "gb": 99999,
-    "sms": 200,
-    "over_minute_price": 1.5,
-    "over_gb_price": 0.0,
-    "over_sms_price": 1.0,
-    "roaming_minute_price": 20.0,
-    "roaming_gb_price": 80.0,
-    "roaming_sms_price": 10.0
+    "sms": 0
   },
   {
     "id": "eto_250gb",
     "name": "Это 250 GB",
-    "monthly_fee": 1500,
-    "minutes": 250,
+    "price": 1500,
     "gb": 250,
-    "sms": 300,
-    "over_minute_price": 1.5,
-    "over_gb_price": 8.0,
-    "over_sms_price": 1.0,
-    "roaming_minute_price": 20.0,
-    "roaming_gb_price": 80.0,
-    "roaming_sms_price": 10.0
+    "minutes": 250,
+    "sms": 0
   }
 ]
