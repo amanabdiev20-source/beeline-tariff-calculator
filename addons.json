@@ -1,0 +1,34 @@
+[
+  {
+    "id": "add_gb_5",
+    "name": "+5 ГБ интернета",
+    "price": 60,
+    "minutes": 0,
+    "gb": 5,
+    "sms": 0
+  },
+  {
+    "id": "add_gb_20",
+    "name": "+20 ГБ интернета",
+    "price": 180,
+    "minutes": 0,
+    "gb": 20,
+    "sms": 0
+  },
+  {
+    "id": "add_min_50",
+    "name": "+50 минут по КР",
+    "price": 70,
+    "minutes": 50,
+    "gb": 0,
+    "sms": 0
+  },
+  {
+    "id": "add_sms_50",
+    "name": "+50 SMS",
+    "price": 30,
+    "minutes": 0,
+    "gb": 0,
+    "sms": 50
+  }
+]
