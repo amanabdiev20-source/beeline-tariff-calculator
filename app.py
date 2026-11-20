@@ -23,35 +23,33 @@ st.markdown("""
 .beeline-banner p {
     color: #E0E0E0;
     margin: 0;
-    font-size: 14px;
+    font-size: 18px !important;
 }
 .badge-row {
-    margin-top: 12px;
+    margin-top: 14px;
 }
 .badge {
     display: inline-block;
     background-color: #FFCC00;
     color: #121212;
     font-weight: 700;
-    font-size: 12px;
-    padding: 4px 10px;
+    font-size: 15px !important;
+    padding: 6px 14px;
     border-radius: 20px;
     margin-right: 8px;
 }
-div[data-testid="stMetricLabel"],
-div[data-testid="stMetricLabel"] * {
-    font-size: 1.25rem !important;
+[data-testid="stAppViewContainer"] [data-testid="stMetricLabel"] p,
+[data-testid="stAppViewContainer"] [data-testid="stMetricLabel"] label {
+    font-size: 20px !important;
     font-weight: 600 !important;
 }
-div[data-testid="stMetricValue"],
-div[data-testid="stMetricValue"] * {
-    font-size: 1.75rem !important;
+[data-testid="stAppViewContainer"] [data-testid="stMetricValue"] div {
+    font-size: 28px !important;
     white-space: normal !important;
     line-height: 1.2 !important;
 }
-div[data-testid="stMetricDelta"],
-div[data-testid="stMetricDelta"] * {
-    font-size: 1.05rem !important;
+[data-testid="stAppViewContainer"] [data-testid="stMetricDelta"] div {
+    font-size: 17px !important;
 }
 </style>
 <div class="beeline-banner">
