@@ -81,7 +81,7 @@ if usage_path:
     st.subheader("💰 Финансовый результат и рекомендация")
     col1, col2, col3 = st.columns([1.15, 1.35, 1.0])
 col1.metric("Текущий тариф", f'«{res["current_tariff"]}»', f"{res['current_monthly_cost']} сом/мес")
-    short_rec = f'«{res["recommended_tariff"]}» + пакет' if res.get("addons") else (f'«{res["recommendation"]}»' if res["recommendation"] != "остаться" else "остаться")
+short_rec = f'«{res["recommended_tariff"]}» + пакет' if res.get("addons") else (f'«{res["recommendation"]}»' if res["recommendation"] != "остаться" else "остаться")
     col2.metric("Рекомендуемый тариф", short_rec, f"{res['new_monthly_cost']} сом/мес")
 col3.metric("Чистая экономия", f"{res['monthly_savings']} сом", "в месяц (с учётом 50 с)" if res["monthly_savings"] > 0 else "остаться выгоднее")
 
