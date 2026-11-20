@@ -1,1 +1,3 @@
-primaryColor = "#22C55E"
+[theme]
+primaryColor = "#FFCC00"
+base = "dark"
