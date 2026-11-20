@@ -81,17 +81,23 @@ if usage_path:
     st.subheader("💰 Финансовый результат и рекомендация")
     col1, col2, col3 = st.columns([1.15, 1.35, 1.0])
 col1.metric("Текущий тариф", f'«{res["current_tariff"]}»', f"{res['current_monthly_cost']} сом/мес")
-short_rec = f'«{res["recommended_tariff"]}» + пакет' if res.get("addons") else (f'«{res["recommendation"]}»' if res["recommendation"] != "остаться" else "остаться")
-col2.metric("Рекомендуемый тариф", short_rec, f"{res['new_monthly_cost']} сом/мес")
-col3.metric("Чистая экономия", f"{res['monthly_savings']} сом", "в месяц (с учётом 50 с)" if res["monthly_savings"] > 0 else "остаться выгоднее")
+addons_list = res.get("recommended_addons", [])
+    short_rec = f'«{res["recommended_tariff"]}» + пакет' if addons_list else (f'«{res["recommendation"]}»' if res["recommendation"] != "остаться" else "остаться")
+    col2.metric("Рекомендуемый тариф", short_rec, f"{res['new_monthly_cost']} сом/мес")
+    col3.metric("Чистая экономия", f"{res['monthly_savings']} сом", "в месяц (с учётом 50 с)" if res["monthly_savings"] > 0 else "остаться выгоднее")
 
-if res.get("addons"):
-    st.warning(f"📦 Подключаемые доппакеты: {', '.join(res['addons'])}")
+    if res["recommendation"] == "остаться":
+        st.info("💡 Ваш текущий тариф уже оптимален — переход не окупится за 3 месяца с учётом комиссии 50 сом.")
+    else:
+        if addons_list:
+            from collections import Counter
+            counts = Counter(addons_list)
+            addons_text = " + ".join([f"{cnt} × {name}" if cnt > 1 else name for name, cnt in counts.items()])
+            rec_phrase = f'тариф «{res["recommended_tariff"]}» и подключить {addons_text}'
+        else:
+            rec_phrase = f'тариф «{res["recommended_tariff"]}»'
+        st.success(f"✅ Рекомендуем перейти на {rec_phrase} — чистая экономия составит {round(res['monthly_savings'] * 3, 2)} сом за 3 месяца!")
 
-if res["recommendation"] == "остаться":
-    st.info("💡 Ваш текущий тариф уже оптимален — переход не окупится за 3 месяца с учётом комиссии 50 сом.")
-else:
-    st.success(f"✅ Выгоднее перейти на {res['recommendation']} — чистая экономия составит {round(res['monthly_savings'] * 3, 2)} сом за 3 месяца!")
     st.subheader("📊 Сравнение средней стоимости по линейке Beeline")
     chart_data = {}
     for t in tariffs:
