@@ -56,7 +56,7 @@ usage_path = None
 
 with tab1:
     data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
-    files = sorted([f for f in os.listdir(data_dir) if f.endswith(".csv")]) if os.path.exists(data_dir) else []
+    files = sorted([f for f in os.listdir(data_dir) if f.endswith(".csv")], key=lambda x: int(x.split("_")[1].split(".")[0])) if os.path.exists(data_dir) else []
     if files:
         selected_file = st.selectbox("Выберите файл детализации абонента:", files)
         usage_path = os.path.join(data_dir, selected_file)
