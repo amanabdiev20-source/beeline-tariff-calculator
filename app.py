@@ -43,13 +43,21 @@ st.markdown("""
     font-size: 20px !important;
     font-weight: 600 !important;
 }
-[data-testid="stAppViewContainer"] [data-testid="stMetricValue"] div {
-    font-size: 28px !important;
+[data-testid="stAppViewContainer"] [data-testid="stMetricValue"],
+[data-testid="stAppViewContainer"] [data-testid="stMetricValue"] * {
+    font-size: 25px !important;
     white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    word-break: break-word !important;
     line-height: 1.2 !important;
 }
-[data-testid="stAppViewContainer"] [data-testid="stMetricDelta"] div {
-    font-size: 17px !important;
+[data-testid="stAppViewContainer"] [data-testid="stMetricDelta"],
+[data-testid="stAppViewContainer"] [data-testid="stMetricDelta"] * {
+    font-size: 16px !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
 }
 </style>
 <div class="beeline-banner">
