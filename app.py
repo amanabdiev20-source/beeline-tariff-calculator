@@ -38,17 +38,20 @@ st.markdown("""
     border-radius: 20px;
     margin-right: 8px;
 }
-div[data-testid="stMetricLabel"] p {
-    font-size: 1.4rem !important;
+div[data-testid="stMetricLabel"],
+div[data-testid="stMetricLabel"] * {
+    font-size: 1.25rem !important;
     font-weight: 600 !important;
 }
-div[data-testid="stMetricValue"] {
-    font-size: 1.85rem !important;
+div[data-testid="stMetricValue"],
+div[data-testid="stMetricValue"] * {
+    font-size: 1.75rem !important;
     white-space: normal !important;
     line-height: 1.2 !important;
 }
-div[data-testid="stMetricDelta"] {
-    font-size: 1.15rem !important;
+div[data-testid="stMetricDelta"],
+div[data-testid="stMetricDelta"] * {
+    font-size: 1.05rem !important;
 }
 </style>
 <div class="beeline-banner">
