@@ -79,9 +79,9 @@ if usage_path:
     num_m = max(1, len(months_data))
 
     st.subheader("💰 Финансовый результат и рекомендация")
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns([1, 1.8, 1.1])
     col1.metric("Текущий тариф", res["current_tariff"], f"{res['current_monthly_cost']} сом/мес")
-    col2.metric("Рекомендация", res["recommendation"], f"{res['new_monthly_cost']} сом/мес")
+    col2.metric("Рекомендация",res["recommendation"].replace("+ +", "+ доп. пакет ") , f"{res['new_monthly_cost']} сом/мес")
     col3.metric("Чистая экономия", f"{res['monthly_savings']} сом/мес", "с учётом 50 с за переход" if res["monthly_savings"] > 0 else "остаться выгоднее")
 
     if res.get("addons"):
