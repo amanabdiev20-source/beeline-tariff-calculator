@@ -38,6 +38,18 @@ st.markdown("""
     border-radius: 20px;
     margin-right: 8px;
 }
+div[data-testid="stMetricLabel"] p {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+}
+div[data-testid="stMetricValue"] {
+    font-size: 1.85rem !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+}
+div[data-testid="stMetricDelta"] {
+    font-size: 1.15rem !important;
+}
 </style>
 <div class="beeline-banner">
     <h1>🐝 Beeline • Умный подбор тарифа</h1>
