@@ -107,14 +107,15 @@ if usage_path:
     col2.metric("Рекомендуемый тариф", short_rec, f"{res['new_monthly_cost']} сом/мес")
     col3.metric("Чистая экономия", f"{res['monthly_savings']} сом", "в месяц (с учётом 50 с)" if res["monthly_savings"] > 0 else "остаться выгоднее")
 
-    rec_t = next((t for t in tariffs if t["name"] == res["recommended_tariff"]), None)
-    perks = ""
-    if rec_t:
-        gb = rec_t.get("data_gb", rec_t.get("internet_gb", 0))
-        mins = rec_t.get("minutes_other", rec_t.get("minutes", 0))
-        sms = rec_t.get("sms", 0)
-        gb_str = "безлимит ГБ" if gb in (-1, None) or gb >= 999 else f"{gb} ГБ"
-        perks = f" (включает: {gb_str}, {mins} мин, {sms} SMS)"
+   TARIFF_PERKS = {
+        "Безлимит 500 Pro Max": " (включает: безлимит ГБ, 150 мин по КР, безлимит внутри сети + Укмуш ТВ)",
+        "Укмуш AI": " (включает: 80 ГБ, 60 мин по КР, безлимит на ChatGPT/Gemini + 3 бонуса)",
+        "Сеники": " (включает: 50 ГБ, 50 мин по КР, безлимит внутри сети + Укмуш ТВ)",
+        "Это 100 GB": " (включает: 100 ГБ, 100 мин по КР, безлимит внутри сети + 4 бонуса)",
+        "Это 250 GB": " (включает: 250 ГБ, 250 мин по КР, безлимит внутри сети + 6 бонусов)",
+        "Это звонковый": " (включает: 500 МБ/сут, 50 мин по КР, безлимит внутри сети + Укмуш ТВ)",
+    }
+    perks = TARIFF_PERKS.get(res["recommended_tariff"], "")
 
     if res["recommendation"] == "остаться":
         st.info(f"💡 Ваш текущий тариф уже оптимален{perks} — переход не окупится за 3 месяца с учётом комиссии 50 сом.")
