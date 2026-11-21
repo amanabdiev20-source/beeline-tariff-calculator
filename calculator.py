@@ -167,7 +167,7 @@ def recommend(usage_file: str, tariffs=None, addons=None) -> dict:
         }
 
     new_avg_month = round(best_total_3m / num_months, 2)
-    monthly_savings = round(current_avg_month - new_avg_month, 2)
+    monthly_savings = round(savings_3m / num_months, 2)
     addon_names = [a["name"] for a in best_addons]
 
     rec_label = best_tariff["name"]
